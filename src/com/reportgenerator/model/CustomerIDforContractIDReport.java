@@ -1,24 +1,17 @@
 package com.reportgenerator.model;
 
+import java.util.HashMap;
+
 public class CustomerIDforContractIDReport {
 
-	private Integer contractID;
-	private Integer uniqueCustomers;
+	HashMap<Integer, Integer> contractIDReportMap = new HashMap<Integer, Integer>();
 
-	public Integer getUniqueCustomers() {
-		return uniqueCustomers;
+	public Integer getUniqueCustomers(Integer contractID ) {
+		return contractIDReportMap.get(contractID);
 	}
 
-	public void setUniqueCustomers(Integer value) {
-		this.uniqueCustomers = value;
-	}
-
-	public Integer getContractID() {
-		return contractID;
-	}
-
-	public void setContractID(Integer contractID) {
-		this.contractID = contractID;
+	public void setUniqueCustomers(Integer contractID, Integer value) {
+		this.contractIDReportMap.put(contractID, value);
 	}
 
 }
